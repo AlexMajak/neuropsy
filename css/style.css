@@ -1,0 +1,669 @@
+:root {
+	--primary-color: #0d9488;
+	--primary-hover: #0f766e;
+	--text-dark: #1f2937;
+	--text-light: #4b5563;
+	--background: #f8f9fa;
+	--card-background: #ffffff;
+	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--base-font-size: 16px;
+	--font-scale: 1.2;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", serif;
+	font-optical-sizing: auto;
+
+}
+
+/* nav start */
+/* Добавляем стили для header-nav */
+.header-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--white);
+	z-index: 1000;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	transform: translateY(-100%);
+	opacity: 0;
+}
+
+.header-nav.visible {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* Обновляем стили для nav */
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem 20px;
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: bold;
+	color: #2c7a7b;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+}
+
+nav ul li {
+	margin-left: 20px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #333;
+	transition: color 0.3s;
+}
+
+nav ul li a:hover {
+	color: #2c7a7b;
+}
+
+/* nav end */
+
+/* wrapper start  */
+/* Обновляем стили для hero-content-wrapper */
+.hero-content-wrapper {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	height: 100vh;
+	/* Занимаем всю высоту экрана */
+	padding: 2rem;
+	text-align: center;
+}
+
+/* Стили для h1 */
+.hero-content h1 {
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+	line-height: 1.2;
+	flex: 1;
+	/* Занимает одну треть */
+	display: flex;
+	align-items: flex-end;
+	/* Выравниваем текст по нижнему краю */
+	align-items: center;
+	justify-content: center;
+}
+
+/* Стили для p */
+.hero-content p {
+	font-size: 1.5rem;
+	color: var(--text-light);
+	margin-bottom: 1rem;
+	flex: 1;
+	/* Занимает одну треть */
+	display: flex;
+	align-items: center;
+	/* Выравниваем текст по центру */
+
+}
+
+/* Стили для button */
+.hero-content button {
+	flex: 1;
+	/* Занимает одну треть */
+	display: flex;
+	align-items: flex-start;
+	/* Выравниваем кнопку по верхнему краю */
+	padding: 1rem 2rem;
+	font-size: 1.25rem;
+	background-color: var(--primary-color);
+	color: var(--white);
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin: 0 auto;
+	opacity: 0.8;
+}
+
+.hero-content button:hover {
+	background-color: var(--primary-hover);
+	opacity: 0.8;
+}
+
+/* wrapper end */
+
+/* отзывы начало */
+/* Стили для блока testimonials */
+.testimonials {
+	padding: 5rem 2rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+	text-align: center;
+	/* Выравниваем текст по центру */
+}
+
+.testimonials h2 {
+	font-size: 2.5rem;
+	margin-bottom: 3rem;
+	color: var(--text-dark);
+}
+
+/* Стили для карточек отзывов */
+.testimonial-card {
+	background: var(--white);
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin-bottom: 2rem;
+	/* Отступ между карточками */
+	max-width: 800px;
+	/* Ограничиваем ширину карточки */
+	margin-left: auto;
+	margin-right: auto;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	text-align: center;
+	/* Выравниваем текст по центру */
+}
+
+/* Анимация при наведении на карточку */
+.testimonial-card:hover {
+	transform: translateY(-10px);
+	/* Поднимаем карточку вверх */
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+	/* Увеличиваем тень */
+}
+
+/* Стили для текста внутри карточки */
+.testimonial-card p {
+	font-size: 1.25rem;
+	color: var(--text-light);
+	margin-bottom: 1rem;
+	font-style: italic;
+	/* Курсив для цитаты */
+}
+
+.testimonial-card h4 {
+	font-size: 1.1rem;
+	color: var(--text-dark);
+	font-weight: bold;
+}
+
+/* отзывы конец */
+
+/* Стили для блока "Мои услуги" */
+.services {
+	padding: 5rem 2rem;
+	background-color: #e3f2fd;
+	/* Светло-голубой фон */
+	backdrop-filter: blur(10px);
+	text-align: center;
+}
+
+/* Стили для блока "Отзывы" */
+.testimonials {
+	padding: 5rem 2rem;
+	background-color: #e8f5e9;
+	/* Светло-зеленый фон */
+	backdrop-filter: blur(10px);
+	text-align: center;
+}
+
+/* Стили для блока "Запись на консультацию" */
+.contact {
+	padding: 5rem 2rem;
+	background-color: #fce4ec;
+	/* Светло-розовый фон */
+	backdrop-filter: blur(10px);
+	text-align: center;
+}
+
+/* Стили для блока с картой */
+.map-section {
+	padding: 5rem 2rem;
+	background-color: #f5f5f5;
+	/* Светлый фон для блока с картой */
+	text-align: center;
+}
+
+.map-section h2 {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+	color: var(--text-dark);
+}
+
+.map-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	border-radius: 1rem;
+	overflow: hidden;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	line-height: 1.6;
+	color: var(--text-dark);
+	overflow-x: hidden;
+}
+
+.container {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.container h2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.background-gradient {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, var(--peach-light) 0%, var(--peach) 100%);
+	z-index: -1;
+	transition: transform 0.3s ease-out;
+}
+
+/* Hero Layout */
+.hero-layout {
+	display: flex;
+	min-height: 100vh;
+	padding: 1rem;
+}
+
+.hero-content-wrapper {
+	flex: 2;
+	display: flex;
+	align-items: center;
+}
+
+/* Gallery Section */
+.gallery-wrapper {
+	flex: 1;
+	padding-left: 2rem;
+}
+
+.gallery {
+	position: sticky;
+	top: 2rem;
+	width: 100%;
+	height: calc(100vh - 4rem);
+	max-height: 800px;
+}
+
+.gallery-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 1rem;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out, transform 0.5s ease-out;
+	transform: scale(1.1);
+}
+
+.gallery-image.active {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* Hero Section */
+.hero-content {
+	max-width: 800px;
+}
+
+.hero h1 {
+	font-size: 3.5rem;
+	margin-bottom: 1.5rem;
+	line-height: 1.2;
+}
+
+.hero p {
+	font-size: 1.25rem;
+	color: var(--text-light);
+	margin-bottom: 2rem;
+}
+
+/* Services Section */
+.services {
+	padding: 5rem 2rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+}
+
+.section-title {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 3rem;
+}
+
+.services-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.service-card {
+	background: var(--white);
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.service-card h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.service-card p {
+	color: var(--text-light);
+}
+
+/* About Section */
+.about {
+	padding: 5rem 2rem;
+}
+
+.about-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 3rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.about-image img {
+	width: 100%;
+	border-radius: 1rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+	font-size: 2.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.about-content p {
+	color: var(--text-light);
+	margin-bottom: 2rem;
+}
+
+.credentials {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.credential {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.credential-icon {
+	font-size: 1.25rem;
+}
+
+/* Contact Section */
+.contact {
+	padding: 5rem 2rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+}
+
+.contact-content {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.contact h2 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.contact p {
+	color: var(--text-light);
+	margin-bottom: 2rem;
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+	padding: 0.75rem;
+	border: 1px solid #e5e7eb;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+	outline: none;
+	border-color: var(--primary-color);
+	box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+.cta-button {
+	background-color: var(--primary-color);
+	color: var(--white);
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+	background-color: var(--primary-hover);
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* new style */
+html {
+	font-size: var(--base-font-size);
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	line-height: 1.6;
+	color: var(--text-dark);
+	background-color: var(--background);
+}
+
+h1 {
+	font-size: calc(2.5rem * var(--font-scale));
+}
+
+h2 {
+	font-size: calc(2rem * var(--font-scale));
+}
+
+h3 {
+	font-size: calc(1.75rem * var(--font-scale));
+}
+
+p {
+	font-size: calc(1rem * var(--font-scale));
+}
+
+section {
+	padding: 5vh 5vw;
+}
+
+.hero-content h1 {
+	font-size: calc(3rem * var(--font-scale));
+	margin-bottom: 2vh;
+}
+
+.hero-content p {
+	font-size: calc(1.25rem * var(--font-scale));
+	margin-bottom: 2vh;
+}
+
+.hero-content button {
+	font-size: calc(1.25rem * var(--font-scale));
+	padding: 1.5vh 3vw;
+}
+
+.services-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	padding: 2vh 5vw;
+}
+
+.testimonial-card {
+	max-width: 90%;
+	margin: 2vh auto;
+}
+
+.about-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	padding: 2vh 5vw;
+}
+
+.map-wrapper {
+	max-width: 100%;
+	height: 50vh;
+	margin: 0 auto;
+	border-radius: 1rem;
+	overflow: hidden;
+	box-shadow: var(--shadow);
+
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+	.hero-layout {
+		flex-direction: column;
+	}
+
+	.gallery-wrapper {
+		padding-left: 0;
+		padding-bottom: 2rem;
+	}
+
+	.gallery {
+		position: relative;
+		top: 0;
+		height: 50vh;
+		max-height: 500px;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero h1 {
+		font-size: 2.5rem;
+	}
+
+	.section-title {
+		font-size: 2rem;
+	}
+
+	.about-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.gallery {
+		height: 300px;
+	}
+
+	.map-wrapper iframe {
+		height: 300px;
+		/* Уменьшаем высоту карты на мобильных устройствах */
+	}
+}
+
+:root {
+	--font-scale: 1;
+}
+
+.hero-content h1 {
+	font-size: calc(2rem * var(--font-scale));
+}
+
+.hero-content p {
+	font-size: calc(1rem * var(--font-scale));
+}
+
+.map-wrapper {
+	height: 40vh;
+}
+
+
+@media (max-width: 480px) {
+	:root {
+		--font-scale: 0.9;
+	}
+
+	.hero-content h1 {
+		font-size: calc(1.75rem * var(--font-scale));
+	}
+
+	.hero-content p {
+		font-size: calc(0.9rem * var(--font-scale));
+	}
+
+	.map-wrapper {
+		height: 30vh;
+	}
+}
