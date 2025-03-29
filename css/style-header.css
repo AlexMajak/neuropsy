@@ -1,224 +1,246 @@
-/* Базовые стили хедера */
+/* ===== Базовые стили хедера ===== */
 .header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+	margin: 0 auto;
+	max-width: 1200px;
+	background-color: aliceblue;
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	border-radius: 15px;
+
+}
+
+.header-container {
+	max-width: 1200px;
+	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 15px 5%;
-	background-color: aliceblue;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
-	transition: all 0.3s ease;
+	padding: 15px 20px;
+	position: relative;
+	margin-top: 0.3rem;
 }
 
 .header-logo {
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 22px;
+	font-weight: 700;
 	color: #2c7a7b;
 	white-space: nowrap;
+	transition: color 0.3s;
 }
 
-/* Стили для основной навигации */
+/* ===== Основная навигация ===== */
 .header-nav {
 	display: flex;
-	align-items: center;
+	transition: all 0.4s ease;
 }
 
-.header-nav nav ul {
+.nav-list {
 	display: flex;
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	gap: 15px;
 }
 
-.header-nav nav ul li {
-	margin-left: 20px;
-}
-
-.header-nav nav ul li a {
+.nav-item a {
 	text-decoration: none;
 	color: #333;
 	font-size: 16px;
-	transition: color 0.3s;
+	font-weight: 500;
+	padding: 5px 10px;
+	border-radius: 5px;
+	transition: all 0.3s;
 	white-space: nowrap;
 }
 
-.header-nav nav ul li a:hover {
+.nav-item a:hover {
 	color: #2c7a7b;
+	background-color: rgba(44, 122, 123, 0.1);
 }
 
-/* Стили для контактов */
+/* ===== Контакты ===== */
 .header-contacts {
 	font-size: 16px;
+	font-weight: 500;
 	color: #333;
 	white-space: nowrap;
 	margin-left: 20px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	transition: all 0.3s;
 }
 
-/* Стили для гамбургер-меню (скрыто по умолчанию) */
+.header-contacts:hover {
+	color: #2c7a7b;
+	background-color: rgba(44, 122, 123, 0.1);
+}
+
+/* ===== Гамбургер-меню ===== */
 .hamburger {
 	display: none;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 30px;
-	height: 21px;
+	background: none;
+	border: none;
 	cursor: pointer;
+	padding: 10px;
+	z-index: 1001;
 }
 
-.hamburger span {
+.hamburger-line {
 	display: block;
+	width: 25px;
 	height: 3px;
-	width: 100%;
 	background-color: #2c7a7b;
-	border-radius: 3px;
+	margin: 4px 0;
 	transition: all 0.3s ease;
 }
 
-/* Медиазапросы для адаптации */
+/* ===== Медиазапросы ===== */
 
-/* 1. Мобильные устройства (до 479px) */
+/* 1. Мобильные (до 479px) */
 @media (max-width: 479px) {
-	.header {
+	.header-container {
 		padding: 10px 15px;
 		flex-wrap: wrap;
 	}
 
-	/* Показываем гамбургер и скрываем основное меню */
+	.header-logo {
+		font-size: 18px;
+		order: 1;
+	}
+
 	.hamburger {
-		display: flex;
+		display: block;
 		order: 2;
 	}
 
 	.header-nav {
-		display: none;
 		width: 100%;
 		order: 4;
-		margin-top: 15px;
+		max-height: 0;
+		overflow: hidden;
+		padding: 0;
 	}
 
-	/* Стили для открытого меню */
 	.header-nav.active {
-		display: block;
+		max-height: 500px;
+		padding: 15px 0;
 	}
 
-	.header-nav nav ul {
+	.nav-list {
 		flex-direction: column;
-	}
-
-	.header-nav nav ul li {
-		margin: 10px 0;
-		margin-left: 0;
+		gap: 10px;
 	}
 
 	.header-contacts {
 		order: 3;
 		width: 100%;
 		text-align: center;
-		margin: 15px 0 0 0;
+		margin: 10px 0 0;
+		padding: 10px;
 		display: none;
 	}
 
 	.header-contacts.active {
 		display: block;
 	}
+
+	/* Анимация гамбургера */
+	.hamburger.active .hamburger-line:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+
+	.hamburger.active .hamburger-line:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.active .hamburger-line:nth-child(3) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
 }
 
-/* 2. Маленькие планшеты (480px-767px) */
+/* 2. Маленькие планшеты (480-767px) */
 @media (min-width: 480px) and (max-width: 767px) {
-	.header {
-		padding: 10px 20px;
+	.header-container {
+		padding: 10px 15px;
+		flex-wrap: wrap;
 	}
 
 	.hamburger {
-		display: flex;
+		display: block;
+		order: 2;
 	}
 
 	.header-nav {
-		display: none;
+		width: 100%;
+		order: 4;
+		max-height: 0;
+		overflow: hidden;
+		padding: 0;
 	}
 
 	.header-nav.active {
-		position: fixed;
-		top: 60px;
-		left: 0;
-		right: 0;
-		background-color: aliceblue;
-		padding: 20px;
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		max-height: 500px;
+		padding: 15px 0;
 	}
 
-	.header-nav nav ul {
+	.nav-list {
 		flex-wrap: wrap;
 		justify-content: center;
-	}
-
-	.header-nav nav ul li {
-		margin: 10px 15px;
+		gap: 10px 20px;
 	}
 
 	.header-contacts {
+		order: 3;
 		margin-left: auto;
 	}
 }
 
-/* 3. Планшеты (768px-1023px) */
+/* 3. Планшеты (768-1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-	.header {
+	.header-container {
 		padding: 15px 30px;
 	}
 
 	.header-logo {
-		font-size: 22px;
+		font-size: 20px;
 	}
 
-	.header-nav nav ul li {
-		margin-left: 15px;
+	.nav-list {
+		gap: 10px;
 	}
 
-	.header-nav nav ul li a {
+	.nav-item a {
 		font-size: 15px;
+		padding: 5px 8px;
 	}
 
 	.header-contacts {
 		font-size: 15px;
+		margin-left: 15px;
 	}
 }
 
 /* 4. Десктоп (1024px и выше) */
 @media (min-width: 1024px) {
-	.header {
-		padding: 15px 50px;
+	.header-container {
+		/* padding: 15px 40px; */
 	}
 
 	.header-logo {
 		font-size: 24px;
 	}
 
-	.header-nav nav ul li {
-		margin-left: 25px;
+	.nav-list {
+		gap: 20px;
 	}
 
-	.header-nav nav ul li a {
+	.nav-item a {
 		font-size: 17px;
+		padding: 5px 15px;
 	}
 
 	.header-contacts {
 		font-size: 17px;
+		margin-left: 30px;
 	}
-}
-
-/* Анимация гамбургера при открытии */
-.header.active .hamburger span:nth-child(1) {
-	transform: translateY(9px) rotate(45deg);
-}
-
-.header.active .hamburger span:nth-child(2) {
-	opacity: 0;
-}
-
-.header.active .hamburger span:nth-child(3) {
-	transform: translateY(-9px) rotate(-45deg);
 }

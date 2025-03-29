@@ -123,6 +123,20 @@
 	transition: all 0.3s ease;
 }
 
+.plus-box::before {
+	content: "+";
+	transition: all 0.7s ease;
+}
+
+.plus-box:hover::before {
+	content: "x";
+	font-size: 44px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 20px;
+	transform: rotate(180deg);
+}
+
 .text-box {
 	display: none;
 	position: absolute;
@@ -135,10 +149,10 @@
 	animation: fadeIn 0.3s;
 }
 
-.toggle-element:hover .plus-box {
+/* .toggle-element:hover .plus-box {
 	background-color: rgb(247, 247, 143);
-	/* padding: 0 20px; */
-}
+	padding: 0 20px;
+} */
 
 .toggle-element:hover .text-box {
 	display: block;
