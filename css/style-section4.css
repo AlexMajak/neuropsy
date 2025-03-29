@@ -1,0 +1,167 @@
+/* About Section */
+.section-4 {
+	padding: 5rem 2rem;
+}
+
+.about-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 3rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.about-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-image img {
+	/* max-width: 300px; */
+	max-height: 400px;
+	width: 450px;
+	object-fit: cover;
+	border-radius: 1rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	opacity: 0.8;
+}
+
+.about-content h2 {
+	font-size: 2.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.about-content p {
+	color: #4b5563;
+	margin-bottom: 2rem;
+}
+
+.credentials {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.credential {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.credential-icon {
+	font-size: 1.25rem;
+}
+
+/* Базовые стили (для мобильных < 480px) */
+@media (max-width: 479px) {
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.about-image img {
+		width: 100%;
+		border-radius: 0.8rem;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.about-content h2 {
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}
+
+	.credentials {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.8rem;
+	}
+
+	.credential {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.9rem;
+	}
+}
+
+/* 480px и выше */
+@media (min-width: 480px) {
+	.about-grid {
+		gap: 2rem;
+		padding: 0 1.5rem;
+	}
+
+	.about-content h2 {
+		font-size: 2rem;
+	}
+
+	.credentials {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	.credential {
+		font-size: 1rem;
+	}
+}
+
+/* 768px и выше */
+@media (min-width: 768px) {
+	.about-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2.5rem;
+		align-items: center;
+		padding: 0 2rem;
+	}
+
+	.about-image img {
+		border-radius: 1rem;
+	}
+
+	.about-content h2 {
+		font-size: 2.2rem;
+		margin-bottom: 1.2rem;
+	}
+
+	.credentials {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.2rem;
+	}
+}
+
+/* 1024px и выше */
+@media (min-width: 1024px) {
+	.about-grid {
+		gap: 3rem;
+		padding: 0;
+	}
+
+	.about-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.about-content p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+
+	.credentials {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.credential {
+		gap: 0.75rem;
+	}
+
+	.credential-icon {
+		font-size: 1.25rem;
+	}
+}

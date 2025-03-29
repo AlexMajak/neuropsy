@@ -1,0 +1,55 @@
+.services-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.services-container * {
+	font-size: 18px;
+}
+
+.services-container h1 {
+	font-size: 24px;
+	text-align: center;
+}
+
+.service-item {
+	border-bottom: 1px solid #e0e0e0;
+	padding: 15px 0;
+}
+
+.service-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+
+.service-header h3 {
+	margin: 0;
+	font-size: 20px;
+	color: #333;
+}
+
+.toggle-btn {
+	font-size: 24px;
+	color: #6c5ce7;
+	transition: transform 0.3s;
+}
+
+.service-details {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease;
+	padding-left: 20px;
+}
+
+.service-item.active .service-details {
+	max-height: 2000px;
+	/* Достаточно большое значение для анимации */
+	padding-top: 15px;
+}
+
+.service-item.active .toggle-btn {
+	transform: rotate(45deg);
+}

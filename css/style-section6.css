@@ -1,0 +1,117 @@
+.section-6 {
+	padding: 5rem 2rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+}
+
+.section-title {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.services-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.service-card {
+	background: white;
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.service-card h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.service-card p {
+	color: var(--text-light);
+}
+
+@media (max-width: 1200px) {
+	.services-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.services-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:
+			"a b"
+			"w w";
+	}
+
+	.item1 {
+		grid-area: a;
+	}
+
+	.item2 {
+		grid-area: b;
+	}
+
+	.item3 {
+		grid-area: w;
+		text-align: center;
+		justify-self: center;
+		/* Центрируем по горизонтали */
+		width: calc(50%);
+		/* Ширина как у верхних блоков (50% минус половина gap) */
+	}
+}
+
+@media (max-width: 480px) {
+	.services-grid {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-areas:
+			"a"
+			"b"
+			"w";
+	}
+
+	.item1 {
+		grid-area: a;
+	}
+
+	.item2 {
+		grid-area: b;
+	}
+
+	.item3 {
+		grid-area: w;
+	}
+
+	.item3 {
+		text-align: initial;
+		/* Сброс выравнивания текста */
+		justify-self: stretch;
+		/* Растягивание на всю ширину */
+		width: auto;
+		/* Отмена фиксированной ширины */
+	}
+
+	section {
+		padding: 20px;
+	}
+
+	section h1 {
+		font-size: 24px;
+	}
+}

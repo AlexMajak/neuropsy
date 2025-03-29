@@ -1,0 +1,136 @@
+/* Основные стили секции */
+.approach {
+	padding: 20px 0;
+	/* Отступы сверху и снизу */
+	background-color: #f9f9f9;
+	/* Светлый фон секции */
+}
+
+/* Контейнер для центрирования содержимого */
+.approach__container {
+	max-width: 1200px;
+	/* Максимальная ширина контента */
+	margin: 0 auto;
+	/* Центрирование по горизонтали */
+	padding: 0 15px;
+	/* Отступы по бокам для маленьких экранов */
+}
+
+/* Стили основного заголовка */
+.approach__title {
+	text-align: center;
+	/* Центрирование текста */
+	margin-bottom: 30px;
+	/* Отступ снизу */
+	font-size: 28px;
+	/* Размер шрифта */
+	color: #333;
+	/* Цвет текста */
+}
+
+/* Сетка для карточек */
+.approach__grid {
+	display: grid;
+	/* Используем CSS Grid */
+	gap: 20px;
+	/* Расстояние между карточками */
+}
+
+/* Стили отдельной карточки */
+.approach__card {
+	background: white;
+	/* Белый фон карточки */
+	border-radius: 8px;
+	/* Закругленные углы */
+	padding: 20px;
+	/* Внутренние отступы */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	/* Тень для эффекта глубины */
+	transition: transform 0.3s ease;
+	/* Плавная анимация при наведении */
+}
+
+/* Эффект при наведении на карточку */
+.approach__card:hover {
+	transform: translateY(-5px);
+	/* Слегка поднимаем карточку */
+}
+
+/* Стили заголовка карточки */
+.approach__card-title {
+	color: #2c3e50;
+	/* Темно-синий цвет */
+	margin-bottom: 10px;
+	/* Отступ снизу */
+	font-size: 18px;
+	/* Размер шрифта */
+}
+
+/* Стили текста карточки */
+.approach__card-text {
+	color: #666;
+	/* Серый цвет текста */
+	line-height: 1.5;
+	/* Межстрочный интервал */
+}
+
+/* Медиазапрос для мобильных устройств (до 479px) */
+@media (max-width: 479px) {
+	.approach__grid {
+		grid-template-columns: 1fr;
+		/* Одна колонка на маленьких экранах */
+	}
+
+	.approach__title {
+		font-size: 24px;
+		/* Уменьшаем размер заголовка */
+	}
+
+	.approach__card {
+		padding: 15px;
+		/* Уменьшаем отступы в карточках */
+	}
+}
+
+/* Медиазапрос для планшетов и больших телефонов (480px и выше) */
+@media (min-width: 480px) {
+	.approach__grid {
+		grid-template-columns: repeat(2, 1fr);
+		/* Две колонки */
+	}
+}
+
+/* Медиазапрос для небольших планшетов (768px и выше) */
+@media (min-width: 768px) {
+	.approach {
+		padding: 40px 0;
+		/* Увеличиваем отступы секции */
+	}
+
+	.approach__title {
+		font-size: 32px;
+		/* Увеличиваем заголовок */
+		margin-bottom: 40px;
+		/* Больший отступ снизу */
+	}
+
+	.approach__card-title {
+		font-size: 20px;
+		/* Увеличиваем заголовки карточек */
+	}
+}
+
+/* Медиазапрос для десктопов (1024px и выше) */
+@media (min-width: 1024px) {
+	.approach__grid {
+		grid-template-columns: repeat(4, 1fr);
+		/* Четыре колонки */
+		gap: 30px;
+		/* Увеличиваем расстояние между карточками */
+	}
+
+	.approach__card {
+		padding: 25px;
+		/* Увеличиваем отступы в карточках */
+	}
+}
