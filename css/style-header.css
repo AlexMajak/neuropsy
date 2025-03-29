@@ -1,58 +1,224 @@
+/* Базовые стили хедера */
 .header {
-	/* position: relative; */
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	padding: 10px;
-	/* border: 1px solid red; */
 	position: fixed;
+	top: 0;
 	left: 0;
 	right: 0;
-	top: 0;
-	margin-left: 20rem;
-	margin-right: 20rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 5%;
 	background-color: aliceblue;
-	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	z-index: 1000;
-}
-
-.header * {
-	/* border: 1px solid red; */
+	transition: all 0.3s ease;
 }
 
 .header-logo {
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #2c7a7b;
+	white-space: nowrap;
 }
 
+/* Стили для основной навигации */
 .header-nav {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 1rem 20px;
 }
 
-nav ul {
-	list-style: none;
+.header-nav nav ul {
 	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-nav ul li {
+.header-nav nav ul li {
 	margin-left: 20px;
-	text-align: center;
 }
 
-nav ul li a {
+.header-nav nav ul li a {
 	text-decoration: none;
 	color: #333;
+	font-size: 16px;
 	transition: color 0.3s;
-
+	white-space: nowrap;
 }
 
-nav ul li a:hover {
+.header-nav nav ul li a:hover {
 	color: #2c7a7b;
+}
+
+/* Стили для контактов */
+.header-contacts {
+	font-size: 16px;
+	color: #333;
+	white-space: nowrap;
+	margin-left: 20px;
+}
+
+/* Стили для гамбургер-меню (скрыто по умолчанию) */
+.hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+	cursor: pointer;
+}
+
+.hamburger span {
+	display: block;
+	height: 3px;
+	width: 100%;
+	background-color: #2c7a7b;
+	border-radius: 3px;
+	transition: all 0.3s ease;
+}
+
+/* Медиазапросы для адаптации */
+
+/* 1. Мобильные устройства (до 479px) */
+@media (max-width: 479px) {
+	.header {
+		padding: 10px 15px;
+		flex-wrap: wrap;
+	}
+
+	/* Показываем гамбургер и скрываем основное меню */
+	.hamburger {
+		display: flex;
+		order: 2;
+	}
+
+	.header-nav {
+		display: none;
+		width: 100%;
+		order: 4;
+		margin-top: 15px;
+	}
+
+	/* Стили для открытого меню */
+	.header-nav.active {
+		display: block;
+	}
+
+	.header-nav nav ul {
+		flex-direction: column;
+	}
+
+	.header-nav nav ul li {
+		margin: 10px 0;
+		margin-left: 0;
+	}
+
+	.header-contacts {
+		order: 3;
+		width: 100%;
+		text-align: center;
+		margin: 15px 0 0 0;
+		display: none;
+	}
+
+	.header-contacts.active {
+		display: block;
+	}
+}
+
+/* 2. Маленькие планшеты (480px-767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+	.header {
+		padding: 10px 20px;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	.header-nav {
+		display: none;
+	}
+
+	.header-nav.active {
+		position: fixed;
+		top: 60px;
+		left: 0;
+		right: 0;
+		background-color: aliceblue;
+		padding: 20px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.header-nav nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.header-nav nav ul li {
+		margin: 10px 15px;
+	}
+
+	.header-contacts {
+		margin-left: auto;
+	}
+}
+
+/* 3. Планшеты (768px-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+	.header {
+		padding: 15px 30px;
+	}
+
+	.header-logo {
+		font-size: 22px;
+	}
+
+	.header-nav nav ul li {
+		margin-left: 15px;
+	}
+
+	.header-nav nav ul li a {
+		font-size: 15px;
+	}
+
+	.header-contacts {
+		font-size: 15px;
+	}
+}
+
+/* 4. Десктоп (1024px и выше) */
+@media (min-width: 1024px) {
+	.header {
+		padding: 15px 50px;
+	}
+
+	.header-logo {
+		font-size: 24px;
+	}
+
+	.header-nav nav ul li {
+		margin-left: 25px;
+	}
+
+	.header-nav nav ul li a {
+		font-size: 17px;
+	}
+
+	.header-contacts {
+		font-size: 17px;
+	}
+}
+
+/* Анимация гамбургера при открытии */
+.header.active .hamburger span:nth-child(1) {
+	transform: translateY(9px) rotate(45deg);
+}
+
+.header.active .hamburger span:nth-child(2) {
+	opacity: 0;
+}
+
+.header.active .hamburger span:nth-child(3) {
+	transform: translateY(-9px) rotate(-45deg);
 }

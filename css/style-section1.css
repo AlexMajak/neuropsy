@@ -1,200 +1,89 @@
-/* section 1 */
+/* Базовые стили для секции */
 .section-1 {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 1fr 1.5fr;
-	/* height: 100vh; */
-	text-align: center;
-	border-radius: 10px;
-	/* justify-content: center; */
 	align-items: center;
-	/* flex-wrap: wrap; */
-	/* border: 1px solid red; */
+	padding: 20px;
+	gap: 30px;
 }
 
+/* Левая колонка (текстовый контент) */
 .section-1-left {
-	/* Добавлено */
 	display: flex;
-	flex: 1;
-	/* Раскомментировано */
 	flex-direction: column;
-	/* Раскомментировано */
 	justify-content: center;
-	/* Добавлено - центрирование по вертикали */
-	/* padding: 20px; */
-	/* Добавлено - отступы для контента */
-	/* margin-right: 40px; */
-	/* border: 1px solid red; */
 }
 
 .section-1-left div {
-	margin-bottom: 10%;
-}
-
-.section-1-right {
-	/* Добавлено */
-	display: flex;
-	flex: 1.5;
-	/* Добавлено */
-	align-items: center;
-	justify-content: center;
-	/* Добавлено - центрирование по вертикали */
-	/* overflow: hidden; */
-	/* Добавлено - чтобы изображение не выходило за границы */
-	/* object-position: center; */
-	/* position: relative; */
-	/* border: 1px solid red; */
-
-}
-
-.section-1-img {
-	object-fit: cover;
-	/* border: 1px solid red; */
-}
-
-.section-1-img img {
-	max-width: 600px;
-	object-fit: contain;
-	object-position: center;
-	border-radius: 500px;
-	opacity: 0.9;
+	margin-bottom: 20px;
 }
 
 .section1-header {
 	font-size: 36px;
 	color: var(--primary-text);
 	font-weight: bold;
-	line-height: normal;
+	line-height: 1.2;
 }
 
 .section1-initials {
 	font-size: 32px;
 	font-weight: bold;
-	line-height: normal;
+	line-height: 1.2;
 }
 
-
-.section1-target {
-	display: flex;
-	flex-direction: column;
-}
-
-.section1-target-one {
-	font-size: 20px;
-}
-
-
+/* Блок с иконками */
 .section1-target-two {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
+	gap: 15px;
 }
 
 .section1-target-two img {
 	width: 80px;
 	height: 80px;
-	object-fit: cover;
+	object-fit: contain;
 }
 
-.section1-target-two-one {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.section1-target-two p {
+	margin-top: 10px;
+	font-size: 16px;
 }
 
-.section1-target-two-two {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+/* Правая колонка (изображение) */
+.section-1-right {
+	position: relative;
 }
 
-.section1-target-two-three {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.section-1-img img {
+	width: 100%;
+	max-width: 600px;
+	border-radius: 500px;
+	opacity: 0.9;
 }
 
-.section1-subscribe {}
-
+/* Стили для кнопки */
 .section1-subscribe button {
-	/* Основные стили */
 	padding: 16px 32px;
 	font-size: 18px;
 	font-weight: 600;
 	color: var(--text-dark);
-	text-transform: uppercase;
-	letter-spacing: 1px;
-
-	/* Градиент */
 	background: linear-gradient(45deg, #5f8aef 0%, #2ce3f4 100%);
-
-	/* Скругление и тень */
 	border-radius: 50px;
 	border: none;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-
-	/* Плавные переходы */
 	transition: all 0.4s ease;
 	cursor: pointer;
-	position: relative;
-	overflow: hidden;
 }
 
-/* Эффект при наведении */
 .section1-subscribe button:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 	background: linear-gradient(45deg, #2ce3f4 0%, #5f8aef 70%);
 }
 
-/* Анимация при нажатии */
-.section1-subscribe button:active {
-	transform: translateY(1px);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-	transition: transform 0.1s ease;
-}
-
-/* Дополнительный эффект (волна при нажатии) */
-.section1-subscribe button::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 5px;
-	height: 5px;
-	background: rgba(255, 255, 255, 0.5);
-	opacity: 0;
-	border-radius: 100%;
-	transform: scale(1, 1) translate(-50%);
-	transform-origin: 50% 50%;
-}
-
-.section1-subscribe button:focus:not(:active)::after {
-	animation: ripple 0.6s ease-out;
-}
-
-@keyframes ripple {
-	0% {
-		transform: scale(0, 0);
-		opacity: 0.5;
-	}
-
-	100% {
-		transform: scale(20, 20);
-		opacity: 0;
-	}
-}
-
-/* картинки со всплывающим окном */
-.section-1-img {
-	position: relative;
-}
-
+/* Всплывающие элементы */
 .toggle-element-one,
 .toggle-element-two,
 .toggle-element-three,
@@ -205,184 +94,220 @@
 }
 
 .toggle-element-one {
-	left: 100px;
-	top: 30px;
+	left: 16%;
+	top: 5%;
 }
 
 .toggle-element-two {
-	left: 0px;
-	top: 150px;
+	left: -2%;
+	top: 30%;
 }
 
 .toggle-element-three {
-	left: -25px;
-	top: 300px;
-	z-index: 1000;
+	left: -2%;
+	top: 60%;
 }
 
 .toggle-element-four {
-	left: 30px;
-	top: 450px;
+	left: 17%;
+	top: 85%;
 }
 
-.section-1-right .plus-box {
+.plus-box {
 	font-size: 36px;
 	color: rgb(132, 131, 129);
 	background-color: rgb(235, 235, 124);
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 0 15px;
 	border-radius: 30px;
 	line-height: 1.4;
+	transition: all 0.3s ease;
 }
 
-.toggle-element-one:hover .plus-box {
-	font-size: 36px;
-	color: rgb(107, 106, 104);
-	background-color: rgb(247, 247, 143);
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 30px;
-	line-height: 1.6;
-	transition: 0.3s ease-in;
-}
-
-.toggle-element-two:hover .plus-box {
-	font-size: 36px;
-	color: rgb(107, 106, 104);
-	background-color: rgb(247, 247, 143);
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 30px;
-	line-height: 1.6;
-	transition: 0.3s ease-in;
-}
-
-.toggle-element-three:hover .plus-box {
-	font-size: 36px;
-	color: rgb(107, 106, 104);
-	background-color: rgb(247, 247, 143);
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 30px;
-	line-height: 1.6;
-	transition: 0.3s ease-in;
-}
-
-.toggle-element-four:hover .plus-box {
-	font-size: 36px;
-	color: rgb(107, 106, 104);
-	background-color: rgb(247, 247, 143);
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 30px;
-	line-height: 1.6;
-	transition: 0.3s ease-in;
-}
-
-.section-1-right .text-box {
-	border: none;
-	background-color: white;
-	border-radius: 10px;
-	padding: 5px 10px;
+.text-box {
 	display: none;
-}
-
-/* .section-1-right .text-box {
-	border: none;
-	background-color: white;
-	border-radius: 10px;
-	padding: 5px 10px;
-	
-} */
-
-.toggle-element-one:hover .text-box {
-	width: 200px;
 	position: absolute;
-	display: inline;
-	border: none;
-	background-color: white;
-	border-radius: 10px;
-	padding: 5px 10px;
-	animation: fadeIn 1s;
-	box-shadow: 0 0 5px 5px rgba(143, 143, 143, 0.5);
-}
-
-.toggle-element-two:hover .text-box {
 	width: 200px;
-	position: absolute;
-	display: inline;
-	border: none;
 	background-color: white;
 	border-radius: 10px;
-	padding: 5px 10px;
-	animation: fadeIn 1s;
-	box-shadow: 0 0 5px 5px rgba(143, 143, 143, 0.5);
+	padding: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	left: 50px;
+	animation: fadeIn 0.3s;
 }
 
-.toggle-element-three:hover .text-box {
-	width: 200px;
-	position: absolute;
-	display: inline;
-	border: none;
-	background-color: white;
-	border-radius: 10px;
-	padding: 5px 10px;
-	animation: fadeIn 1s;
-	box-shadow: 0 0 5px 5px rgba(143, 143, 143, 0.5);
+.toggle-element:hover .plus-box {
+	background-color: rgb(247, 247, 143);
+	/* padding: 0 20px; */
 }
 
-.toggle-element-four:hover .text-box {
-	width: 200px;
-	position: absolute;
-	display: inline;
-	border: none;
-	background-color: white;
-	border-radius: 10px;
-	padding: 5px 10px;
-	animation: fadeIn 1s;
-	box-shadow: 0 0 5px 5px rgba(143, 143, 143, 0.5);
+.toggle-element:hover .text-box {
+	display: block;
 }
 
+/* Анимации */
 @keyframes fadeIn {
 	from {
 		opacity: 0;
+		transform: translateY(10px);
 	}
 
-	/* Начальное состояние (прозрачность 0) */
 	to {
 		opacity: 1;
+		transform: translateY(0);
 	}
-
-	/* Конечное состояние (полная видимость) */
 }
 
-.plus-box::before {
-	content: "+";
-	transition: transform 0.5s, opacity 0.5s;
-}
+/* Медиазапросы для адаптации */
 
-.plus-box:hover::before {
-	content: "×";
-	transform: rotate(180deg);
-	opacity: 1;
-}
-
-@media (max-width: 768px) {
+/* Мобильные устройства (до 479px) */
+@media (max-width: 479px) {
 	.section-1 {
 		grid-template-columns: 1fr;
-	}
-}
-
-@media (max-width: 480px) {
-	.section-1 {
-		grid-template-columns: 1fr;
+		padding: 15px;
+		gap: 20px;
 	}
 
-	section {
-		padding: 20px;
-	}
-
-	section h1 {
+	.section1-header {
 		font-size: 24px;
 	}
+
+	.section1-initials {
+		font-size: 20px;
+	}
+
+	.section1-target-two {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.section-1-img img {
+		max-width: 300px;
+	}
+
+	.toggle-element-one,
+	.toggle-element-two,
+	.toggle-element-three,
+	.toggle-element-four {
+		display: none;
+	}
+
+	.section1-subscribe button {
+		padding: 12px 24px;
+		font-size: 16px;
+	}
+}
+
+/* Маленькие планшеты (480px-767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+	.section-1 {
+		grid-template-columns: 1fr;
+	}
+
+	.section1-header {
+		font-size: 28px;
+	}
+
+	.section1-initials {
+		font-size: 24px;
+	}
+
+	.section1-target-two {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.section-1-img img {
+		max-width: 400px;
+	}
+
+	.toggle-element-one {
+		left: 10%;
+		top: 5%;
+	}
+
+	.toggle-element-two {
+		left: 0%;
+		top: 30%;
+	}
+
+	.toggle-element-three {
+		left: -5%;
+		top: 60%;
+	}
+
+	.toggle-element-four {
+		left: 5%;
+		top: 85%;
+	}
+}
+
+/* Планшеты (768px-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+	.section-1 {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.section1-header {
+		font-size: 32px;
+	}
+
+	.section1-initials {
+		font-size: 28px;
+	}
+
+	.section-1-img img {
+		max-width: 100%;
+	}
+
+	/* .toggle-element-one {
+		left: 10%;
+		top: 5%;
+	}
+
+	.toggle-element-two {
+		left: 0%;
+		top: 30%;
+	}
+
+	.toggle-element-three {
+		left: -5%;
+		top: 60%;
+	}
+
+	.toggle-element-four {
+		left: 5%;
+		top: 85%;
+	} */
+}
+
+/* Десктоп (1024px и выше) */
+@media (min-width: 1024px) {
+	.section-1 {
+		grid-template-columns: 1fr 1.5fr;
+	}
+
+	/* .section-1-img img {
+		max-width: 600px;
+	}
+
+	.toggle-element-one {
+		left: 15%;
+		top: 5%;
+	}
+
+	.toggle-element-two {
+		left: 5%;
+		top: 30%;
+	}
+
+	.toggle-element-three {
+		left: 0%;
+		top: 60%;
+	}
+
+	.toggle-element-four {
+		left: 10%;
+		top: 85%;
+	} */
 }
