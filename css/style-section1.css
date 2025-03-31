@@ -96,7 +96,7 @@
 
 .toggle-element-one {
 	left: 16%;
-	top: 5%;
+	top: 4%;
 }
 
 .toggle-element-two {
@@ -110,7 +110,7 @@
 }
 
 .toggle-element-four {
-	left: 17%;
+	left: 15%;
 	top: 85%;
 }
 
@@ -127,15 +127,19 @@
 .plus-box::before {
 	content: "+";
 	transition: all 0.7s ease;
+	/* Добавляем начальное состояние transform */
+	transform: rotate(0deg);
+	display: inline-block
 }
 
 .plus-box:hover::before {
-	content: "x";
+	content: "+";
 	font-size: 44px;
 	padding-left: 5px;
 	padding-right: 5px;
 	border-radius: 20px;
-	transform: rotate(180deg);
+	transform: rotate(90deg);
+	display: inline-block
 }
 
 .text-box {
@@ -170,6 +174,32 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+/* Отцентровать */
+.section-1-right,
+.section-1-left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.section1-target {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.section1-target-two-one,
+.section1-target-two-two,
+.section1-target-two-three {
+	text-align: center;
+}
+
+
+.section1-header {
+	text-align: center;
 }
 
 /* Медиазапросы для адаптации */
@@ -223,6 +253,30 @@
 		font-size: 16px;
 	}
 
+	.section-1-right,
+	.section-1-left {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.section1-target {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.section1-target-two-one,
+	.section1-target-two-two,
+	.section1-target-two-three {
+		text-align: center;
+	}
+
+	.section1-header {
+		text-align: center;
+	}
+
 }
 
 /* Маленькие планшеты (480px-767px) */
@@ -236,8 +290,6 @@
 
 	.section-1-left {
 		grid-area: b;
-		justify-content: center;
-		align-items: center;
 	}
 
 	.section1-target-two {
@@ -246,12 +298,11 @@
 		/* gap: 10px; */
 	}
 
-	.section-1-right {
-		grid-area: a;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	.section-1-right,
+	.section-1-left {
+		margin: 0 auto;
 	}
+
 
 	.section1-header {
 		font-size: 28px;
@@ -275,6 +326,12 @@
 	.toggle-element-three,
 	.toggle-element-four {
 		display: none;
+	}
+
+	.section1-target-two-one,
+	.section1-target-two-two,
+	.section1-target-two-three {
+		text-align: center;
 	}
 }
 
