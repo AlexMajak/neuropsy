@@ -42,3 +42,12 @@ function switchToTab(tabId) {
 	// Прокрутка к верху секции section-7
 	document.querySelector('.section-7').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// Форма на отправку
+document.getElementById('consultation-form').addEventListener('submit', function (e) {
+	e.preventDefault();
+
+	// Здесь можно добавить обработку формы (AJAX запрос и т.д.)
+	alert('Форма отправлена! Мы свяжемся с вами в ближайшее время.');
+	this.reset();
+});

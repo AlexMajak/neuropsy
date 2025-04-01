@@ -1,0 +1,175 @@
+.section-9 {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px 20px;
+	font-family: Arial, sans-serif;
+}
+
+.section-9 h1 {
+	text-align: center;
+	margin-bottom: 30px;
+	color: #2c3e50;
+	font-size: 32px;
+}
+
+.booking-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	justify-content: center;
+}
+
+.booking-info {
+	flex: 1;
+	min-width: 300px;
+	max-width: 500px;
+	background-color: #f9f9f9;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form {
+	flex: 1;
+	min-width: 300px;
+	max-width: 500px;
+	background-color: white;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+	color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	font-size: 16px;
+	transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+	border-color: #4CAF50;
+	outline: none;
+}
+
+.phone-info {
+	display: flex;
+	align-items: center;
+	margin: 25px 0;
+	font-size: 18px;
+	color: #2c3e50;
+}
+
+.phone-info i {
+	margin-right: 10px;
+	color: #4CAF50;
+	font-size: 24px;
+}
+
+.agreement {
+	font-size: 14px;
+	color: #7f8c8d;
+	margin-bottom: 20px;
+}
+
+.agreement a {
+	color: #4CAF50;
+	text-decoration: none;
+}
+
+.agreement a:hover {
+	text-decoration: underline;
+}
+
+.submit-btn {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 14px 25px;
+	font-size: 16px;
+	border-radius: 6px;
+	cursor: pointer;
+	width: 100%;
+	transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+	background-color: #3e8e41;
+}
+
+.telegram-promo {
+	margin-top: 30px;
+	padding: 20px;
+	background-color: #f0f8ff;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.telegram-promo a {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 10px 20px;
+	background-color: #0088cc;
+	color: white;
+	text-decoration: none;
+	border-radius: 6px;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+.telegram-promo a:hover {
+	background-color: #006699;
+}
+
+/* Адаптивные стили */
+@media (max-width: 479px) {
+	.section-9 {
+		padding: 30px 10px;
+	}
+
+	.section-9 h1 {
+		font-size: 26px;
+	}
+
+	.booking-info,
+	.booking-form {
+		min-width: 100%;
+		padding: 20px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+	.booking-info,
+	.booking-form {
+		min-width: 100%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.booking-container {
+		gap: 30px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.section-9 {
+		padding: 50px 20px;
+	}
+}

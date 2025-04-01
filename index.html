@@ -25,6 +25,7 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -1228,18 +1229,114 @@
 				</div>
 			</div>
 		</section>
+
 		<section class="section-9">
-			<h2>Раздел 9</h2>
-			<p>Текст раздела 9.</p>
+			<h1>Запишитесь на консультацию</h1>
+
+			<div class="booking-container">
+				<div class="booking-form">
+					<form id="consultation-form">
+						<div class="form-group">
+							<label for="fullname">Введите Ваше ФИО</label>
+							<input type="text" id="fullname" name="fullname" required>
+						</div>
+
+						<div class="form-group">
+							<label for="age">Возраст и пол ребенка</label>
+							<div style="display: flex; gap: 15px;">
+								<input type="number" id="age" name="age" placeholder="Возраст" required style="flex: 1;">
+								<select id="gender" name="gender" required style="flex: 1;">
+									<option value="" disabled selected>Пол</option>
+									<option value="male">Мальчик</option>
+									<option value="female">Девочка</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email">Введите E-mail</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+
+						<div class="phone-info">
+							<i class="fas fa-phone"></i>
+							<span>+7 (999) 999-99-99</span>
+						</div>
+
+						<div class="agreement">
+							<p>Пожалуйста, перед записью ознакомьтесь с <a href="#" target="_blank">договором-офертой</a></p>
+							<p>Запомните, пожалуйста, <strong>связку для подготовки к проектной консультации</strong></p>
+						</div>
+
+						<button type="submit" class="submit-btn">Записаться на консультацию</button>
+					</form>
+				</div>
+
+				<div class="booking-info">
+					<h2 style="color: #2c3e50; margin-top: 0;">Либо оставьте вопрос в Telegram</h2>
+					<p style="line-height: 1.6; color: #34495e;">Часто родители выбирают быстрый способ связи через Telegram для
+						предварительных вопросов.</p>
+
+					<div class="telegram-promo">
+						<p style="margin-bottom: 10px;"><strong>Быстрая связь с психологом</strong></p>
+						<p style="color: #7f8c8d; margin-bottom: 15px;">Ответим в течение 1-2 часов в рабочее время</p>
+						<a href="https://t.me/neuropsycholog_bot" target="_blank">
+							<i class="fab fa-telegram"></i> Написать в Telegram
+						</a>
+					</div>
+
+					<div style="margin-top: 30px;">
+						<h3 style="color: #2c3e50;">Что нужно подготовить?</h3>
+						<ul style="color: #34495e; line-height: 1.6; padding-left: 20px;">
+							<li>Основные вопросы, которые вас волнуют</li>
+							<li>Возрастные особенности ребенка</li>
+							<li>Предыдущие заключения специалистов (если есть)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</section>
+
 		<section class="section-10">
-			<h2>Раздел 10</h2>
-			<p>Текст раздела 10.</p>
+			<div class="map-container">
+				<script type="text/javascript" charset="utf-8" async
+					src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0b8fdb372a342fb86d117c91bc42d627fa6f2daf6cceed8fa48d532d3b717158&amp;width=600&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+			</div>
 		</section>
 	</main>
 
-	<footer>
-		<p>&copy; 2025 Ваша компания. Все права защищены.</p>
+	<footer class="footer">
+		<div class="footer-container">
+			<div class="footer-content">
+				<div class="footer-contacts">
+					<h3>Контакты</h3>
+					<a href="tel:+79991234567" class="contact-phone">+7 (999) 123-45-67</a>
+					<a href="mailto:info@vashasait.ru" class="contact-email">info@vashasait.ru</a>
+				</div>
+
+				<div class="footer-social">
+					<h3>Мы в соцсетях</h3>
+					<div class="social-links">
+						<a href="#" class="social-link whatsapp">
+							<img src="https://via.placeholder.com/40/25D366?text=WA" alt="WhatsApp">
+						</a>
+						<a href="#" class="social-link vk">
+							<img src="https://via.placeholder.com/40/4680C2?text=VK" alt="ВКонтакте">
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-info">
+					<p>© 2025 Ваша компания. Все права защищены.</p>
+					<a href="/privacy">Политика конфиденциальности</a>
+					<a href="/agreement">Пользовательское соглашение</a>
+				</div>
+			</div>
+
+			<button class="back-to-top" aria-label="Вернуться наверх">
+				↑
+			</button>
+		</div>
 	</footer>
 
 	<script src="js/script.js"></script>
